@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Untitled</title>
+    <title>Sofka</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    "controllers/#{params[:controller]}", media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "controllers/#{params[:controller]}", 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag    "controllers/#{params[:controller]}", media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag "controllers/#{params[:controller]}", 'data-turbolinks-track': 'reload' %>
 
   </head>
 
@@ -23,9 +23,9 @@
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li><%= link_to t('navbar.offer'), products_path %></li>
+        <li><%= link_to t('global.contact'), contact_path %></li>
+        <li><%= link_to t('global.about'), '#' %></li>
       </ul>
     </div>
   </nav>
@@ -35,7 +35,10 @@
   <footer>
     <ul class="sf-footer">
       <li>
-        <%= link_to "Zaloguj", '#', class: "sf-block" %>
+        <%= login_link %>
+      </li>
+      <li>
+        <%= link_to "Rejestracja", new_user_registration_path, class: "sf-block" %>
       </li>
       <li>
         <%= link_to "Kontakt", '#', class: "sf-block" %>

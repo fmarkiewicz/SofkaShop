@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  width: 1.5
+  height: 1.5
+  sleeping_area: 1.5
+  category_id: 1
+  price_in_int: 1
+  shipment_price_in_int: 1
+  in_magazine: false
+  only_on_demand: false
+  description: MyText
+  name: MyString
+
+two:
+  width: 1.5
+  height: 1.5
+  sleeping_area: 1.5
+  category_id: 1
+  price_in_int: 1
+  shipment_price_in_int: 1
+  in_magazine: false
+  only_on_demand: false
+  description: MyText
+  name: MyString

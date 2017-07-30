@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @product.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @product.height %>
+</p>
+
+<p>
+  <strong>Sleeping area:</strong>
+  <%= @product.sleeping_area %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category_id %>
+</p>
+
+<p>
+  <strong>Price in int:</strong>
+  <%= @product.price_in_int %>
+</p>
+
+<p>
+  <strong>Shipment price in int:</strong>
+  <%= @product.shipment_price_in_int %>
+</p>
+
+<p>
+  <strong>In magazine:</strong>
+  <%= @product.in_magazine %>
+</p>
+
+<p>
+  <strong>Only on demand:</strong>
+  <%= @product.only_on_demand %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

@@ -1,2 +1,9 @@
 pl:
   hello: "Witaj świecie!"
+  global:
+    login: "Zaloguj"
+    register: "Zarejestruj się"
+    logout: "Wyloguj"
+    contact: "Kontakt"
+    offer: "Oferta"
+    about: "O nas"

@@ -1,0 +1,67 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.text_field :width, id: :product_width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height, id: :product_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sleeping_area %>
+    <%= form.text_field :sleeping_area, id: :product_sleeping_area %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.number_field :category_id, id: :product_category_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_in_int %>
+    <%= form.number_field :price_in_int, id: :product_price_in_int %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipment_price_in_int %>
+    <%= form.number_field :shipment_price_in_int, id: :product_shipment_price_in_int %>
+  </div>
+
+  <div class="field">
+    <%= form.label :in_magazine %>
+    <%= form.check_box :in_magazine, id: :product_in_magazine %>
+  </div>
+
+  <div class="field">
+    <%= form.label :only_on_demand %>
+    <%= form.check_box :only_on_demand, id: :product_only_on_demand %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :product_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :product_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
