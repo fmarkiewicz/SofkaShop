@@ -1,6 +1,7 @@
 pl:
   hello: "Witaj świecie!"
   global:
+    home: "Strona główna"
     login: "Zaloguj"
     register: "Zarejestruj się"
     logout: "Wyloguj"

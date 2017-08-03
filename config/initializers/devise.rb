@@ -7,15 +7,15 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'b656cce71935701cb9d67550a5d7a86f8c6d7952737b798177908bd1f8c7db686b39544b41414b83471deb632ed473d65b8c2cfe5bb45d709d0e204f98b309af'
-  Rails.application.config.to_prepare do
-    Devise::Mailer.layout "devise_mailer"
-  end
+  # Rails.application.config.to_prepare do
+  #   Devise::Mailer.layout "../users/mailer"
+  # end
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'hayabusa.ryu94@gmail.com'
+  config.mailer_sender = ENV['MAILER_LOGIN']
 
   # Configure the class responsible to send e-mails.
   config.mailer = 'Devise::Mailer'
@@ -125,7 +125,7 @@ Devise.setup do |config|
   # able to access the website for two days without confirming their account,
   # access will be blocked just in the third day. Default is 0.days, meaning
   # the user cannot access the website without confirming their account.
-  # config.allow_unconfirmed_access_for = 2.days
+  config.allow_unconfirmed_access_for = 3.days
 
   # A period that the user is allowed to confirm their account before their
   # token becomes invalid. For example, if set to 3.days, the user can confirm
@@ -139,10 +139,10 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
+  config.reconfirmable = false
 
   # Defines which key will be used when confirming an account
-  # config.confirmation_keys = [:email]
+  config.confirmation_keys = [:email]
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
