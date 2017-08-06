@@ -1,0 +1,4 @@
+pl:
+  contact:
+    message_send: "Dziękujemy za Twoją wiadomość. Skontaktujemy się z Tobą wkrótce."
+    message_unsend: "Wiadomość nie może zostać wysłana."

@@ -1,4 +1,6 @@
 pl:
   errors:
   active_record:
-
+    product:
+      paperclip:
+        not_allowed: "Niedozwolony format pliku (tylko: jpeg/png/gif)."
