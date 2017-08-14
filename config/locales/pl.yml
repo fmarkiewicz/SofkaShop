@@ -1,10 +1,17 @@
 pl:
+  time:
+   formats:
+     long: "%Y-%m-%d %H:%M:%S"
   hello: "Witaj świecie!"
   global:
+    orders: "Zamówienia"
     home: "Strona główna"
     login: "Zaloguj"
     register: "Zarejestruj się"
     logout: "Wyloguj"
     contact: "Kontakt"
-    offer: "Oferta"
+    products: "Oferta"
     about: "O nas"
+
+  paperclip:
+      not_allowed: "Niedozwolony format pliku (tylko: jpeg/png/gif)."

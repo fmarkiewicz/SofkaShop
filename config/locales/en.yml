@@ -31,3 +31,11 @@
 
 en:
   hello: "Hello world"
+  active_record:
+    models:
+      product:
+        one: "Produkt"
+        other: "Produkty"
+      order:
+        one: "Zamówienie"
+        other: "Zamówienia"

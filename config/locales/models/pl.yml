@@ -1,6 +1,25 @@
 pl:
-  errors:
-  active_record:
-    product:
-      paperclip:
-        not_allowed: "Niedozwolony format pliku (tylko: jpeg/png/gif)."
+  activerecord:
+    models:
+      product:
+        one: "Produkt"
+        other: "Produkty"
+      order:
+        one: "Zamówienie"
+        other: "Zamówienia"
+    attributes:
+      product:
+        width: "Szerokość"
+        height: "Wysokość"
+        sleeping_area: "Powierzchnia spania"
+        price_in_int: "Cena"
+        shipment_price_in_int : "Cena dostawy"
+        description: "Opis"
+        category: "Kategoria"
+        name: "Nazwa"
+        product_image_file_name: "Nazwa pliku"
+
+
+
+
+
