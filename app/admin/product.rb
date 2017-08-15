@@ -12,7 +12,7 @@ ActiveAdmin.register Product do
 #   permitted
 # end
 
-  menu priority: 2, label: proc{ I18n.t("active_admin.products") }
+  menu priority: 2, label: proc {I18n.t("active_admin.products")}
 
   show do |ad|
     attributes_table do
@@ -27,6 +27,8 @@ ActiveAdmin.register Product do
       row :shipment_price_in_int
       row :width
       row :height
+      row :updated_at
+      row :created_at
     end
   end
 
@@ -38,6 +40,18 @@ ActiveAdmin.register Product do
     column :category
     column :created_at
     actions
+  end
+
+  form html: {multipart: true} do |f|
+    f.inputs do
+      f.input :name
+      f.input :product_image, type: :file
+      f.input :price_in_int
+      f.input :category, as: :select,
+              collection: collection_of_categories,
+              include_blank: false
+    end
+    f.actions
   end
 
 end

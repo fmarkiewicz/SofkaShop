@@ -18,6 +18,15 @@ pl:
         category: "Kategoria"
         name: "Nazwa"
         product_image_file_name: "Nazwa pliku"
+        only_on_demand: "Tylko na zamówienie"
+        created_at: "Data dodania"
+        updated_at: "Data ostatniej aktualizacji"
+        product_image: "Zdjęcie produktu"
+        categories:
+          lozka: "Łóżka"
+          mebloscianki: "Meblościanki"
+          komplety: "Komplety"
+
 
 
 

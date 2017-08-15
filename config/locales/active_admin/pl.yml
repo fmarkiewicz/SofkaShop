@@ -1,3 +1,5 @@
 pl:
   active_admin:
     products: "Produkty"
+    create_model: "Dodaj"
+    update_model: "Zaktualizuj"

@@ -4,9 +4,9 @@ class Product < ApplicationRecord
                           message: I18n.t('paperclip.not_allowed')
 
   CATEGORIES = {
-      "Komplety" => 1,
-      "Mebloscianki" => 2,
-      "Lozka" =>3
+      "komplety" => 1,
+      "mebloscianki" => 2,
+      "lozka" =>3
   }
 
 end
