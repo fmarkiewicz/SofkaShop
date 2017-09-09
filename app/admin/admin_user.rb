@@ -1,4 +1,5 @@
-ActiveAdmin.register User do
+ActiveAdmin.register AdminUser do
+  role_changeable
   permit_params :email, :password, :password_confirmation
 
   index do
@@ -15,6 +16,20 @@ ActiveAdmin.register User do
   filter :current_sign_in_at
   filter :sign_in_count
   filter :created_at
+
+  show do
+    attributes_table do
+      row :email
+      # row :reset_password_sent_at
+      # row :current_sign_in
+      # row :last_sign_in
+      row :created_at
+      row :updated_at
+      row :confirmation_sent_at
+      row :confirmed_at
+      row :role
+    end
+  end
 
   form do |f|
     f.inputs do

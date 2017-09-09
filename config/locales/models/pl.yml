@@ -7,6 +7,14 @@ pl:
       order:
         one: "Zamówienie"
         other: "Zamówienia"
+      active_admin/managed_resource: "Zarządzane zasoby"
+      active_admin/permission: "Pozwolenie"
+      permission:
+        one: "Pozwolenie"
+        other: "Pozwolenia"
+      admin_user:
+        one: "Użytkownik"
+        other: "Użytkownicy"
     attributes:
       product:
         width: "Szerokość"
@@ -22,11 +30,36 @@ pl:
         created_at: "Data dodania"
         updated_at: "Data ostatniej aktualizacji"
         product_image: "Zdjęcie produktu"
+        in_magazine: "W magazynie"
         categories:
           lozka: "Łóżka"
           mebloscianki: "Meblościanki"
           komplety: "Komplety"
-
+      user:
+        reset_password_sent_at: "Resetowanie hasła wysłane"
+        current_sign_in: "Aktualne logowanie"
+        last_sign_in: "Ostatnie logowanie"
+        created_at: "Stworzony"
+        updated_at: "Zaktualizowany"
+        confirmation_sent_at: "Potwierdzenie wysłane"
+        confirmed_at: "Potwierdzony"
+      base: &base
+        id: ID
+        created_at: "Stworzone"
+        updated_at: "Zaktualizowane"
+      managed_resource: &managed_resource
+        class_name: "Nazwa obiektu"
+        action: "Akcja"
+        name: "Nazwa"
+      active_admin/managed_resource:
+        <<: *base
+        <<: *managed_resource
+      active_admin/permission:
+        <<: *base
+        <<: *managed_resource
+        managed_resource_id: "Zarządzane zasoby"
+        role: "Rola"
+        state: "Stan"
 
 
 

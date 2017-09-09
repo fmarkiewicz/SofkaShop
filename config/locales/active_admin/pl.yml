@@ -1,5 +1,20 @@
 pl:
   active_admin:
+    batch_actions:
+      labels:
+        can: "Zezwól"
+        cannot: "Zablokuj"
     products: "Produkty"
     create_model: "Dodaj"
     update_model: "Zaktualizuj"
+    last_products: "Ostatnie produkty"
+    filters:
+      predicates:
+        from: "Od"
+        to: "Do"
+
+    devise:
+      email:
+        title: "E-mail"
+      password:
+        title: "Hasło"

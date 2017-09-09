@@ -5,5 +5,5 @@ module ActiveAdmin::ViewsHelper
       [I18n.t("activerecord.attributes.product.categories.#{c[0]}"), c[1]]
     end
   end
-  
+
 end

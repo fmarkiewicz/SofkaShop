@@ -1,0 +1,14 @@
+pl:
+  views:
+    admin_user:
+      notice:
+        assigned: "Wybranym rekordom została przypisana rola: %{role}"
+    permission:
+      notice:
+        state_changed: "Wybrane rekordy zostały zmienione na: %{state}"
+        reloaded: "Przeładowane"
+      action_item:
+        reload: "Przeładuj"
+      state:
+        can: "Może"
+        cannot: "Nie może"

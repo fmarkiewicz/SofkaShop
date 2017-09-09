@@ -14,7 +14,7 @@ ActiveAdmin.register_page "Dashboard" do
 
     columns do
       column do
-        panel "Recent Posts" do
+        panel I18n.t('active_admin.last_products') do
           ul do
             Product.first(5).map do |post|
               li link_to(post.name, admin_product_path(post))
@@ -25,7 +25,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Info" do
-          para "Welcome to ActiveAdmin."
+          para "Tutaj będą się pojawia na przykład najnowsze zamówienia"
         end
       end
     end

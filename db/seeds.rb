@@ -48,6 +48,6 @@ products_beds_list.each_with_index do |product, id|
 end
 puts "skonczono dodawac lozka"
 
-if Rails.env.development? and User.where(email: 'admin@example.com').blank?
-  User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+if Rails.env.development? and AdminUser.where(email: 'admin@example.com').blank?
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 end
