@@ -12,5 +12,11 @@ pl:
     contact: "Kontakt"
     products: "Oferta"
     about: "O nas"
+    "yes": "Tak"
+    "no": "Nie"
   paperclip:
       not_allowed: "Niedozwolony format pliku (tylko: jpeg/png/gif)."
+  categories:
+    "1": "Komplety"
+    "2": "Meblościanki"
+    "3": "Łóżka"

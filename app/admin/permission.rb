@@ -40,11 +40,15 @@ ActiveAdmin.register ::ActiveAdmin::Permission, as: "Permission" do
 
   index do
     selectable_column
-    column :role
+    column :role do |record|
+      I18n.t("activerecord.attributes.permission.role.#{record.role}")
+    end
     column(:state) do |record|
       status_tag(I18n.t("views.permission.state.#{record.state}"), record.can? ? :ok : nil)
     end
-    column :action
+    column :action do |record|
+      I18n.t("activerecord.attributes.permission.action.#{record.action}")
+    end
     column :name
     column :class_name
   end

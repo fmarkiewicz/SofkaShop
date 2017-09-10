@@ -7,24 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 products_completes_list = [
-    [ "Zestaw 1", "to jest zestaw nr 1, posluzy jeszcze dlugie lata", Product::CATEGORIES["Komplety"], 3.00, 2.3, 1200, 100, true],
-    [ "Zestaw 2", "to jest zestaw nr 2, posluzy jeszcze troche lata", Product::CATEGORIES["Komplety"], 3.00, 2.3, 1200, 100, true],
-    [ "Zestaw 3", "to jest zestaw nr 3, posluzy jeszcze chwile", Product::CATEGORIES["Komplety"], 3.00, 2.3, 1200, 100, true],
-    [ "Zestaw 4", "to jest zestaw nr 4, posluzy jeszcze juz tylko troszke", Product::CATEGORIES["Komplety"], 3.00, 2.3, 1200, 100, true],
-    [ "Zestaw 5", "to jest zestaw nr 5, posluzy jeszcze wiele pokolen", Product::CATEGORIES["Komplety"], 3.00, 2.3, 1200, 100, true]
+    [ "Zestaw 1", "to jest zestaw nr 1, posluzy jeszcze dlugie lata", Product::CATEGORIES["komplety"], 3.00, 2.3, 1200, 100, true],
+    [ "Zestaw 2", "to jest zestaw nr 2, posluzy jeszcze troche lata", Product::CATEGORIES["komplety"], 3.00, 2.3, 1200, 100, true],
+    [ "Zestaw 3", "to jest zestaw nr 3, posluzy jeszcze chwile", Product::CATEGORIES["komplety"], 3.00, 2.3, 1200, 100, true],
+    [ "Zestaw 4", "to jest zestaw nr 4, posluzy jeszcze juz tylko troszke", Product::CATEGORIES["komplety"], 3.00, 2.3, 1200, 100, true],
+    [ "Zestaw 5", "to jest zestaw nr 5, posluzy jeszcze wiele pokolen", Product::CATEGORIES["komplety"], 3.00, 2.3, 1200, 100, true]
 ]
 
 products_wall_list = [
-    [ "mebloscianka 1", "to bedzie piekna mebloscianka ktora uraczy wasze oko", Product::CATEGORIES["Mebloscianki"], 3.00, 2.3, 1200, 100, true],
-    [ "mebloscianka 2", "to bedzie piekna mebloscianka ktora uraczy wasze oko", Product::CATEGORIES["Mebloscianki"], 3.00, 2.3, 1200, 100, true],
-    [ "mebloscianka 3", "to bedzie piekna mebloscianka ktora uraczy wasze oko", Product::CATEGORIES["Mebloscianki"], 3.00, 2.3, 1200, 100, true]
+    [ "mebloscianka 1", "to bedzie piekna mebloscianka ktora uraczy wasze oko", Product::CATEGORIES["mebloscianki"], 3.00, 2.3, 1200, 100, true],
+    [ "mebloscianka 2", "to bedzie piekna mebloscianka ktora uraczy wasze oko", Product::CATEGORIES["mebloscianki"], 3.00, 2.3, 1200, 100, true],
+    [ "mebloscianka 3", "to bedzie piekna mebloscianka ktora uraczy wasze oko", Product::CATEGORIES["mebloscianki"], 3.00, 2.3, 1200, 100, true]
 ]
 
 products_beds_list = [
-    [ "lozko 1", "najwygodniejsze loze na jakim przyjdzie wam spac", Product::CATEGORIES["Lozka"], 3.00, 2.3, 6.0, 1200, 100, true],
-    [ "lozko 2", "dobra kanapa na imprezy i drzemki", Product::CATEGORIES["Lozka"], 3.00, 2.3, 5.3, 1200, 100, true],
-    [ "lozko 3", "to lozko nie nadaje sie dla psa", Product::CATEGORIES["Lozka"], 3.00, 2.3, 5.8, 1200, 100, true],
-    [ "lozko 4", "lozko lubiane przez koty", Product::CATEGORIES["Lozka"], 3.00, 2.3, 5.8, 1200, 100, true]
+    [ "lozko 1", "najwygodniejsze loze na jakim przyjdzie wam spac", Product::CATEGORIES["lozka"], 3.00, 2.3, 6.0, 1200, 100, true],
+    [ "lozko 2", "dobra kanapa na imprezy i drzemki", Product::CATEGORIES["lozka"], 3.00, 2.3, 5.3, 1200, 100, true],
+    [ "lozko 3", "to lozko nie nadaje sie dla psa", Product::CATEGORIES["lozka"], 3.00, 2.3, 5.8, 1200, 100, true],
+    [ "lozko 4", "lozko lubiane przez koty", Product::CATEGORIES["lozka"], 3.00, 2.3, 5.8, 1200, 100, true]
 ]
 
 products_completes_list.each_with_index do |product, id|
@@ -49,5 +49,6 @@ end
 puts "skonczono dodawac lozka"
 
 if Rails.env.development? and AdminUser.where(email: 'admin@example.com').blank?
-  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+  AdminUser.create!(email: 'admin@example.com', password: 'password',
+                    password_confirmation: 'password', role: 'admin')
 end

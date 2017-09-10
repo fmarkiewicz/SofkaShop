@@ -43,6 +43,16 @@ pl:
         updated_at: "Zaktualizowany"
         confirmation_sent_at: "Potwierdzenie wysłane"
         confirmed_at: "Potwierdzony"
+      permission:
+        role:
+          staff: "Pracownik"
+        action:
+          destroy: "Usuwanie"
+          read: "Pokazywanie"
+          create: "Tworzenie"
+          update: "Aktualizowanie"
+          batch_action: "Akcje grupowe"
+          reload: "Przeładowanie"
       base: &base
         id: ID
         created_at: "Stworzone"
