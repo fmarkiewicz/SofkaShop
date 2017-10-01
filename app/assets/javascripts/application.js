@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require turbolinks
 //= require cable
-//= require jquery-3.2.1
-//= require bootstrap
+//= require jquery
 //= require bootstrap-sprockets
 

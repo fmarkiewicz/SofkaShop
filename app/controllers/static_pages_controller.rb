@@ -4,10 +4,6 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def contact
-
-  end
-
   def contact_form
     respond_to do |format|
       format.json

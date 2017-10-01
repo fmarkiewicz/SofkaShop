@@ -12,7 +12,8 @@
  *
  * require_self
  * require_tree .
- *= require _bootstrap
- *= require _bootstrap-sprockets
- * require custom/helpers
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "custom/bootstrap_changes";

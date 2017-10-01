@@ -12,3 +12,8 @@ pl:
       state:
         can: "Może"
         cannot: "Nie może"
+    static_pages:
+      home:
+        title: "Firma Sofka:"
+        description: "Zajmujemy się produkcją, renowacją, sprzedażą oraz dystrybucją mebli. W naszej ofercie znajdują się kanapy, meblościanki, fotele, stoły, krzesła.
+         Mamy ponad 20 lat doświadczenia oraz mnóstwo zadowolonych klientów. Nasi pracownicy z pasją doradzą przy wyborze koloru, wzoru, materiału tak, by spełnił wszelkie oczekiwania klienta."
