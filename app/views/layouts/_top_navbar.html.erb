@@ -1,10 +1,9 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Sofka</a>
+      <%= link_to 'Sofka', root_path, class: "navbar-brand" %>
     </div>
     <ul class="nav navbar-nav">
-      <li><%= link_to t('global.home'), root_path %></li>
       <li><%= link_to t('global.products'), products_path %></li>
       <li><%= link_to t('global.contact'), new_contact_path %></li>
       <li><%= link_to t('global.about'), '#' %></li>

@@ -2,6 +2,11 @@
   max-height: 400px;
   overflow: hidden;
 }
+
+.navbar {
+  margin: 0;
+}
+
 @media screen and (min-width: 768px) {
   .carousel-caption {
     background: rgba(0, 0, 0, 0.5);
@@ -13,5 +18,8 @@
   }
   .carousel-indicators {
     bottom: 0;
+  }
+  .navbar {
+    border-radius: 0;
   }
 }
