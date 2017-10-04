@@ -40,7 +40,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= paginate @products, window: 2 %>
 <br>
 
 <%= link_to 'New Product', new_product_path %>
