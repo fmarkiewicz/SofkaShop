@@ -1,28 +1,14 @@
 <p id="notice"><%= notice %></p>
+  <div class="container">
+    <% Product::CATEGORIES.each do |category| %>
+      <div class="col-xs-6">
+        <%= link_to I18n.t("activerecord.attributes.product.categories.#{category.first}"),
+         '#', class: "btn btn-primary sf-m-b center-block btn-lg" %>
+      </div>
+    <% end %>
+</div>
 
-<h1>Products</h1>
-
-<% #TODO %>
-- widok kategorii, siatka obrazkow z nazwa kategorii, po kliku wejscie w liste mebli z danej kategorii
-<table>
-  <thead>
-    <tr>
-      <th>Width</th>
-      <th>Height</th>
-      <th>Sleeping area</th>
-      <th>Category</th>
-      <th>Price in int</th>
-      <th>Shipment price in int</th>
-      <th>In magazine</th>
-      <th>Only on demand</th>
-      <th>Description</th>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
+    <!-- <% @products.each do |product| %>
       <tr>
         <td><%= product.width %></td>
         <td><%= product.height %></td>
@@ -33,14 +19,7 @@
         <td><%= product.only_on_demand %></td>
         <td><%= product.description %></td>
         <td><%= product.name %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= paginate @products, window: 2 %>
-<br>
+    <% end %> -->
 
-<%= link_to 'New Product', new_product_path %>
+<!-- <%= paginate @products, window: 2 %> -->
