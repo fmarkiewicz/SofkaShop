@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
-  <div class="container">
-    <% Product::CATEGORIES.each do |category| %>
-      <div class="col-xs-6">
-        <%= link_to I18n.t("activerecord.attributes.product.categories.#{category.first}"),
-         '#', class: "btn btn-primary sf-m-b center-block btn-lg" %>
-      </div>
-    <% end %>
+<div class="container">
+  <% Product::CATEGORIES.each do |category| %>
+    <div class="col-xs-6">
+      <%= link_to I18n.t("activerecord.attributes.product.categories.#{category.first}"),
+        '#', class: "btn btn-primary sf-m-b center-block btn-lg" %>
+    </div>
+  <% end %>
 </div>
 
     <!-- <% @products.each do |product| %>
