@@ -3,23 +3,7 @@
   <% Product::CATEGORIES.each do |category| %>
     <div class="col-xs-6">
       <%= link_to I18n.t("activerecord.attributes.product.categories.#{category.first}"),
-        '#', class: "btn btn-primary sf-m-b center-block btn-lg" %>
+        products_list_path(category: category.second), class: "btn btn-primary sf-m-b center-block btn-lg" %>
     </div>
   <% end %>
 </div>
-
-    <!-- <% @products.each do |product| %>
-      <tr>
-        <td><%= product.width %></td>
-        <td><%= product.height %></td>
-        <td><%= product.sleeping_area %></td>
-        <td><%= product.price_in_int %></td>
-        <td><%= product.shipment_price_in_int %></td>
-        <td><%= product.in_magazine %></td>
-        <td><%= product.only_on_demand %></td>
-        <td><%= product.description %></td>
-        <td><%= product.name %></td>
-      </tr>
-    <% end %> -->
-
-<!-- <%= paginate @products, window: 2 %> -->

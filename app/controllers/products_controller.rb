@@ -4,12 +4,15 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.order(:created_at).page(params[:page]).per(10)
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+  end
+
+  def products_list
+    @products = Product.where(category: params[:category]).order(:created_at).page(params[:page]).per(10)
   end
 
   # GET /products/new
