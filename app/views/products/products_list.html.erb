@@ -1,12 +1,28 @@
 <% @products.each do |product| %>
-  <div class="container">
-    <div class="row well">
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <%= image_tag product.product_image.url(:original), class: "img-responsive" %>
-      </div>
-      <div class="col-d-8 col-sm-6 col-xs-12">
-        <%= content_tag(:p, product.description) %>
+    <div class="container">
+      <div class="row well sf-well">
+        <div class="media">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <%= link_to image_tag(product.product_image.url(:original), class: "img-responsive center-block"), '#', class: "js-photo-modal",
+                        data: { toggle: "modal", target: "#photoModal"} %>
+          </div>
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <%= content_tag(:h4, product.name, class: "media-heading") %>
+            <%= content_tag(:p, price_in_float(product.price_in_int), class: "text-right") %>
+            <%= content_tag(:p, product.description) %>
+            <%= link_to t('views.products.order'), '#', class: "btn btn-primary pull-right" %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 <% end %>
+
+<div id="photoModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+      </div>
+    </div>
+
+  </div>
+</div>

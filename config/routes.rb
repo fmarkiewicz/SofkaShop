@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :orders
   resources :categories
   resources :products
+  get '/products_list', to: 'products#products_list', as: 'products_list'
 end
