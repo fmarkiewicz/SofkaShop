@@ -20,3 +20,6 @@ pl:
     products: 
       choose_category: "Wybierz Kategorię:"
       order: "Zamów"
+    orders:
+      new:
+        title: "Nowe zamówienie"

@@ -1,5 +1,8 @@
 pl:
   activerecord:
+    errors:
+      messages:
+        blank: "nie może być puste"
     models:
       product:
         one: "Produkt"
@@ -35,6 +38,22 @@ pl:
           lozka: "Łóżka"
           mebloscianki: "Meblościanki"
           komplety: "Komplety"
+
+      order:
+        order_number: "Numer zamówienia"
+        status: "Status"
+        first_name: "Imię"
+        last_name: "Nazwisko"
+        address: "Adres"
+        phone: "Nr telefonu"
+        city: "Miasto"
+        country: "Państwo"
+        nip: "NIP"
+        company: "Firma"
+        email: "E-mail"
+        zip_code: "Kod pocztowy"
+        payment_type: "Rodzaj zapłaty"
+        comment: "Komentarz"
       user:
         reset_password_sent_at: "Resetowanie hasła wysłane"
         current_sign_in: "Aktualne logowanie"

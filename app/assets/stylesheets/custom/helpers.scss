@@ -2,6 +2,16 @@
   display: block;
 }
 
+.sf-center-block {
+  display: block;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
 .sf-m-b {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
+}
+
+img.sf-photo-payments {
+  width: 80px;
 }
