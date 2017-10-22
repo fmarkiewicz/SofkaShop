@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :categories
   resources :products
   get '/products_list', to: 'products#products_list', as: 'products_list'
+  post "/orders/:id" => "orders#show"
+  post "/hook" => "orders#hook"
 end
