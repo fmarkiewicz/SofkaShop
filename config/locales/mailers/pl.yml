@@ -1,0 +1,14 @@
+pl:
+  order_email:
+    welcome: "Witaj %{name},"
+    confirmation:
+      subject: "Potwierdzenie zamówienia"
+      body: "Przyjęliśmy zamówienie. <br> Jego status możesz sprawdzać na stronie: %{url}"
+
+    change_status:
+      subject: "Zmiana statusu zamówienia"
+      body: "Zmieniliśmy status Twojego zamówienia. <br> %{url}"
+
+    closed_order:
+      subject: "Zamówienie zostało zrealizowane"
+      body: "Realizacja zamówienia została zakończona. Dziękujemy za zakup"

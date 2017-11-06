@@ -43,7 +43,7 @@ ActiveAdmin.register Product do
     end
   end
 
-  index do |products|
+  index do
     selectable_column
     id_column
     column :name
@@ -55,7 +55,7 @@ ActiveAdmin.register Product do
     actions
   end
 
-  form html: {multipart: true} do |f|
+  form html: { multipart: true } do |f|
     f.inputs do
       f.input :name
       f.input :product_image, type: :file
