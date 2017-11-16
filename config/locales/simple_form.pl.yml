@@ -1,9 +1,23 @@
-en:
+pl:
   simple_form:
-    "yes": 'Yes'
-    "no": 'No'
+    "yes": 'Tak'
+    "no": 'Nie'
+    labels:
+      contact:
+        name: 'Imie'
+        email: 'E-mail'
+        message: "Wiadomość"
+        submit: "Wyślij wiadomość"
+        contact_us: "Skontaktuj się z nami"
     required:
-      html: '<abbr title="required">#</abbr>'
+      text: 'Wymagane'
+      mark: ''
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    contact:
+      send: "Wiadomość wysłana"
+      unsend: "Nie wysłano wiadomości"
     error_notification:
       default_message: "Please review the problems below:"
     # Examples

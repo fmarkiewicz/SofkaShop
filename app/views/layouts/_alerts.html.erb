@@ -1,2 +1,7 @@
-<%= content_tag :p, notice, class: "notice" if notice.present?%>
-<%= content_tag :p, alert, class: "alert" if alert.present?%>
+<div class="sf-flash">
+  <% flash.each do |key, value| %>
+      <%= content_tag :div, class: "alert alert-#{key} text-center" do %>
+          <%= content_tag :strong, value %>
+      <% end %>
+  <% end %>
+</div>

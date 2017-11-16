@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   validates_attachment_content_type :product_image, content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)$/,
                           message: I18n.t('paperclip.not_allowed')
 
+
   CATEGORIES = {
       "komplety" => 1,
       "mebloscianki" => 2,

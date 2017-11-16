@@ -1,38 +1,53 @@
-<h3>Odwiedź nasz salon!</h3>
-<p>
-  ZPUH SOFKA
-  Osiedlowa 30
-  87-707 Zakrzewo
+<div class="container text-center sf-m-b">
+  <div class="sf-m-b">
+    <h3>Odwiedź nasz salon!</h3>
+    <p>
+      ZPUH SOFKA<br>
+      Osiedlowa 30<br>
+      87-707 Zakrzewo<br>
+      <br>
+      Telefon/Fax: (54) 27-20-203﻿<br>
+      E-mail: ﻿markiewiczfryderyk@gmail.com<br>
+    </p>
+  </div>
+  <div class="sf-m-b">
+    <h3>Godziny otwarcia:</h3>
+    <p>﻿
+      Poniedziałek - Piątek<br>
+      8.00 - 16.00<br>
+      Sobota<br>
+      8.00 - 13.00<br>
+      (po uprzednim telefonie można umowić sie na późniejszą godzinę)<br>
+    </p>
+  </div>
+</div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2414.607642584295!2d18.62236831603006!3d52.75731337985979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471cae71ebad94d3%3A0xa16cf88a1f6b908!2sOsiedlowa+30%2C+87-707+Zakrzewo!5e0!3m2!1spl!2spl!4v1510855899556" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-  Telefon/Fax: (54) 27-20-203﻿
-  E-mail: ﻿markiewiczfryderyk@gmail.com
-</p>
+<div align="center" class="container">
+  <h3><%= t('simple_form.labels.contact.contact_us') %></h3>
 
-<h3>Godziny otwarcia:</h3>
-<p>﻿
-  Poniedziałek - Piątek
-  8.00 - 16.00
-  Sobota
-  8.00 - 13.00
-  (po uprzednim telefonie można umowić sie na późniejszą godzinę)
-</p>
-
-<% #TODO %>
-- mapa dojazdu, strona na wzor fiore
-
-<div align="center">
-  <h3>Send A message to Us</h3>
-
-  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-      <%= f.input :name, :required => true %>
-      <%= f.input :email, :required => true %>
-      <%= f.input :message, :as => :text, :required => true %>
-      <div class= "hidden">
-        <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+  <%= simple_form_for @contact, :html => {:class => 'form-horizontal'} do |f| %>
+      <div class="form-group row">
+        <%= f.label :name, class: "control-label col-sm-3" %>
+        <div class="col-sm-6">
+          <%= f.input_field :name, class: "form-control", required: false %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :email, class: "control-label col-sm-3" %>
+        <div class="col-sm-6">
+          <%= f.input_field :email, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :message, class: "control-label col-sm-3" %>
+        <div class="col-sm-6">
+          <%= f.input_field :message, class: "form-control sf-message-input", :as => :text %>
+        </div>
       </div>
       <div>
-        </br>
-        <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+
+        <%= f.button :submit, t('simple_form.labels.contact.submit'),:class => "btn btn-primary sf-m-b" %>
       </div>
   <% end %>
 </div>

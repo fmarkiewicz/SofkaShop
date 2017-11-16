@@ -9,4 +9,8 @@ class StaticPagesController < ApplicationController
       format.json
     end
   end
+
+  def render_500
+    render '500'
+  end
 end

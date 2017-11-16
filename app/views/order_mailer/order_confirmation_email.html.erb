@@ -6,7 +6,7 @@
 <body>
 <h1><%= t('order_email.welcome', name: @order.first_name) %></h1>
 <p>
-  <%= t('order_email.confirmation.body', url: order_url(@order)).html_safe %>
+  <%= t('order_email.confirmation.body', url: order_url(@order, show_only: true)).html_safe %>
 </p>
 
 </body>

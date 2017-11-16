@@ -8,9 +8,9 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
     @contact.request = request
     if @contact.deliver
-      flash.now[:notice] = t('contact.message_send')
+      flash.now[:success] = I18n.t('simple_form.contact.send')
     else
-      flash.now[:error] = t('contact.message_unsend')
+      flash.now[:danger] = I18n.t('simple_form.contact.unsend')
       render :new
     end
   end

@@ -24,8 +24,10 @@ class OrdersController < ApplicationController
   end
 
   def show
-    if PayPal::SDK::REST::Payment.find(params[:paymentId]).execute( :payer_id => params[:PayerID] )
-      OrderMailer.order_confirmation_email(@order).deliver_now if @order.update(status: 'paid')
+    unless params[:show_only] == 'true'
+      if PayPal::SDK::REST::Payment.find(params[:paymentId]).execute(:payer_id => params[:PayerID])
+        OrderMailer.order_confirmation_email(@order).deliver_now if @order.update(status: 'paid')
+      end
     end
   end
 
@@ -43,59 +45,59 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
 
+    item = @order.product
     # respond_to do |format|
-      if @order.save
-        # redirect_to @order.paypal_url(order_path(@order), )
-        item = Product.find(params[:product_id])
-        # format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        # format.json { render :show, status: :created, location: @order }
-        @payment = PayPal::SDK::REST::Payment.new({
-            intent: 'sale',
-            payer: {payment_method: 'paypal'},
-            redirect_urls: {
-                return_url: order_url(@order),
-                cancel_url: root_url
-            },
-            transactions: {
-                item_list: {
-                    items: [
-                        {
-                            name: item.name,
-                            sku: item.name,
-                            price: format("%.2f", item.price_in_int/100),
-                            currency: 'PLN',
-                            quantity: 1
-                        },
-                        {
-                            name: "Przesyłka",
-                            sku: "shipment",
-                            price: format("%.2f", item.shipment_price_in_int/100),
-                            currency: 'PLN',
-                            quantity: 1
-                        }
+    if @order.save
+      # redirect_to @order.paypal_url(order_path(@order), )
+      # format.html { redirect_to @order, notice: 'Order was successfully created.' }
+      # format.json { render :show, status: :created, location: @order }
+      @payment = PayPal::SDK::REST::Payment.new({
+                                                    intent: 'sale',
+                                                    payer: {payment_method: 'paypal'},
+                                                    redirect_urls: {
+                                                        return_url: order_url(@order),
+                                                        cancel_url: root_url
+                                                    },
+                                                    transactions: {
+                                                        item_list: {
+                                                            items: [
+                                                                {
+                                                                    name: item.name,
+                                                                    sku: item.name,
+                                                                    price: format("%.2f", item.price_in_int/100),
+                                                                    currency: 'PLN',
+                                                                    quantity: 1
+                                                                },
+                                                                {
+                                                                    name: "Przesyłka",
+                                                                    sku: "shipment",
+                                                                    price: format("%.2f", item.shipment_price_in_int/100),
+                                                                    currency: 'PLN',
+                                                                    quantity: 1
+                                                                }
 
-                    ]
-                },
-                amount: {
-                    total: format("%.2f", (item.price_in_int + item.shipment_price_in_int)/100),
-                    currency: 'PLN'
-                },
-                description: "Opłata za #{item.name} z przesyłką."
-            }
-                                                  })
-        if @payment.create
-          @redirect_url = @payment.links.find {|link| link.rel == 'approval_url'}.href
-          session[:payment_id] = @payment.id
-          redirect_to @redirect_url
-        else
-          logger.error @payment.error.inspect
-          render json: {message: 'Błąd połaczenia. Spróbuj później!'}, status: :unprocessable_entity
-        end
+                                                            ]
+                                                        },
+                                                        amount: {
+                                                            total: format("%.2f", (item.price_in_int + item.shipment_price_in_int)/100),
+                                                            currency: 'PLN'
+                                                        },
+                                                        description: "Opłata za #{item.name} z przesyłką."
+                                                    }
+                                                })
+      if @payment.create
+        @redirect_url = @payment.links.find {|link| link.rel == 'approval_url'}.href
+        session[:payment_id] = @payment.id
+        redirect_to @redirect_url
       else
-        render :new
-        # format.html { render :new }
-        # format.json { render json: @order.errors, status: :unprocessable_entity }
+        logger.error @payment.error.inspect
+        render json: {message: 'Błąd połaczenia. Spróbuj później!'}, status: :unprocessable_entity
       end
+    else
+      render :new
+      # format.html { render :new }
+      # format.json { render json: @order.errors, status: :unprocessable_entity }
+    end
     # end
   end
 
@@ -131,6 +133,8 @@ class OrdersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def order_params
-    params.require(:order).permit(:order_number, :status, :first_name, :last_name, :phone, :address, :city, :country, :nip, :company, :email, :zip_code, :total_price_in_int, :total_shipment_price_in_int, :payment_type, :comment)
+    params.require(:order).permit(:order_number, :status, :first_name, :last_name, :phone, :address, :city, :country,
+                                  :nip, :company, :email, :zip_code, :total_price_in_int, :total_shipment_price_in_int,
+                                  :payment_type, :comment, :product_id)
   end
 end

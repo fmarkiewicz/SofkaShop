@@ -3,7 +3,9 @@ class Order < ApplicationRecord
   validates_presence_of :first_name, :last_name, :phone, :address, :city,
                         :zip_code, :email, :payment_type
   after_save :send_email_about_status
-  before_create :check_attributes
+
+  belongs_to :product
+  # before_create :check_attributes
 
   #
   # def paypal_url(return_path, item)
@@ -28,8 +30,8 @@ class Order < ApplicationRecord
       OrderMailer.change_order_status_email(self).deliver_now
     end
   end
-
-  def check_attributes
-
-  end
+  #
+  # def check_attributes
+  #
+  # end
 end

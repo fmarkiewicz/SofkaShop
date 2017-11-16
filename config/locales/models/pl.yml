@@ -24,7 +24,7 @@ pl:
         height: "Wysokość"
         sleeping_area: "Powierzchnia spania"
         price_in_int: "Cena"
-        shipment_price_in_int : "Cena dostawy"
+        shipment_price_in_int: "Cena dostawy"
         description: "Opis"
         category: "Kategoria"
         name: "Nazwa"

@@ -1,84 +1,139 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Order number:</strong>
-  <%= @order.order_number %>
-</p>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td>
+          Nr
+        </td>
+        <td>
+          <%= @order.order_number %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.status') %>
+        </td>
+        <td>
+          <%= @order.status %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.first_name') %>
+        </td>
+        <td>
+          <%= @order.first_name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.last_name') %>
+        </td>
+        <td>
+          <%= @order.last_name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.phone') %>
+        </td>
+        <td>
+          <%= @order.phone %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.address') %>
+        </td>
+        <td>
+          <%= @order.address %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.city') %>
+        </td>
+        <td>
+          <%= @order.city %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.country') %>
+        </td>
+        <td>
+          <%= @order.country %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.nip') %>
+        </td>
+        <td>
+          <%= @order.nip %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.company') %>
+        </td>
+        <td>
+          <%= @order.company %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.email') %>
+        </td>
+        <td>
+          <%= @order.email %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.zip_code') %>
+        </td>
+        <td>
+          <%= @order.zip_code %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.product.price_in_int') %>
+        </td>
+        <td>
+          <%= price_in_float @order.product.price_in_int if @order.product.present? %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.product.shipment_price_in_int') %>
+        </td>
+        <td>
+          <%= price_in_float @order.product.shipment_price_in_int if @order.product.present? %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.payment_type') %>
+        </td>
+        <td>
+          <%= @order.payment_type %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= t('activerecord.attributes.order.comment') %>
+        </td>
+        <td>
+          <%= @order.comment %>
+        </td>
+      </tr>
+      </tbody>
+    </table>
 
-<p>
-  <strong>Status:</strong>
-  <%= @order.status %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @order.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @order.last_name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @order.phone %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @order.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @order.city %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @order.country %>
-</p>
-
-<p>
-  <strong>Nip:</strong>
-  <%= @order.nip %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @order.company %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @order.email %>
-</p>
-
-<p>
-  <strong>Zip code:</strong>
-  <%= @order.zip_code %>
-</p>
-
-<p>
-  <strong>Total price in int:</strong>
-  <%= @order.total_price_in_int %>
-</p>
-
-<p>
-  <strong>Total shipment price in int:</strong>
-  <%= @order.total_shipment_price_in_int %>
-</p>
-
-<p>
-  <strong>Payment type:</strong>
-  <%= @order.payment_type %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= @order.comment %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+  </div>
+</div>
