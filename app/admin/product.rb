@@ -1,5 +1,5 @@
 ActiveAdmin.register Product do
-  extend Modules::Structures
+ # extend Modules::Structures
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
