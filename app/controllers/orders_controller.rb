@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     item = @order.product
-    # respond_to do |format|
+    respond_to do |format|
     if @order.save
       # redirect_to @order.paypal_url(order_path(@order), )
       # format.html { redirect_to @order, notice: 'Order was successfully created.' }
@@ -91,14 +91,14 @@ class OrdersController < ApplicationController
         redirect_to @redirect_url
       else
         logger.error @payment.error.inspect
-        render json: {message: 'Błąd połaczenia. Spróbuj później!'}, status: :unprocessable_entity
+        format.json {render json: {message: 'Błąd połaczenia. Spróbuj później!'}, status: :unprocessable_entity }
       end
     else
-      render :new
+      # render :new
       # format.html { render :new }
       # format.json { render json: @order.errors, status: :unprocessable_entity }
     end
-    # end
+    end
   end
 
   # PATCH/PUT /orders/1

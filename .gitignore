@@ -15,7 +15,7 @@ capybara-*.html
 *.orig
 rerun.txt
 pickle-email-*.html
-/config/paypal.yml
+#/config/paypal.yml
 lol.rb
 config/secrets.yml
 
