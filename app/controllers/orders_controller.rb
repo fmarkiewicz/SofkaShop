@@ -94,7 +94,7 @@ class OrdersController < ApplicationController
         format.json {render json: {message: 'Błąd połaczenia. Spróbuj później!'}, status: :unprocessable_entity }
       end
     else
-      # render :new
+      render :new
       # format.html { render :new }
       # format.json { render json: @order.errors, status: :unprocessable_entity }
     end
